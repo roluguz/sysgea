@@ -1,0 +1,83 @@
+       <div class="box-body">
+        <div class="row">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-6">
+            <form action="../Controllers/registroasesorController.php" method="post">
+              <div class="form-group has-feedback">
+                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Usuario de conexion" required>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="email" name="correo" id="correo" class="form-control" placeholder="Correo institucional" onblur="fAgrega();" required>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="password" name="strpsw" id="strpsw" class="form-control" placeholder="Conraseña" required>
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="text" name="nomasesor" id="nomasesor" class="form-control" placeholder="Nombres" required>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="text" name="apeasesor" id="apeasesor" class="form-control" placeholder="Apellidos" required>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <label>Tipo de documento</label>
+                <?php
+                $cboTipo = "";
+                $cboTipo = '<select class="form-control" name="tpdocumento" required placeholder="Tipo de Documento" >';
+                $cboTipo .= '<option value="-1">Seleccione</option>';
+                while ($row = mysqli_fetch_assoc($objtipo)) {
+                  $cboTipo .= '<option value=' . $row['idtipoDocumento'] . '>';
+                  $cboTipo .= $row['Descripcion'] . '</option>';
+                }
+                $cboTipo .= '</select>';
+                echo $cboTipo;
+                ?>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="number" name="nrodoc" id="nrodoc" class="form-control" placeholder="Numero de Documento" required>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <label>Carrera</label>
+                <?php
+                $cbkra = "";
+                $cbkra = '<select class="form-control" name="codcarrera" ';
+                $cbkra .= 'required placeholder="Carrera" >';
+                $cbkra .= '<option value="-1">Seleccione</option>';
+                while ($row = mysqli_fetch_assoc($obkra)) {
+                  $cbkra .= '<option value=' . $row['idCarrera'] . '>';
+                  $cbkra .= $row['nCarrera'] . '</option>';
+                }
+                $cbkra .= '</select>';
+                echo $cbkra;
+                ?>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="text" name="codspecial" id="codspecial" class="form-control" placeholder="Especialidad" required>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="email" name="correo2" id="correo2" class="form-control" placeholder="Correo personal" required>
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+              </div>
+              <div class="form-group has-feedback">
+                <input type="number" name="telasesor" id="telasesor" class="form-control" placeholder="Telefono" required>
+                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+              </div>
+              <div class="row">
+                <div class="col-xs-8"> </div>
+              </div>
+              <div class="col-xs-3">
+                <button type="submit" name="submit" class="btn btn-primary btn-block btn-flat" value="nuevo"> Registrar</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-2">
+          </div> <!-- /.col -->
+        </div> <!-- /.row -->
+       </div> 

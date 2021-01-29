@@ -1,0 +1,127 @@
+general
++-------------------------+
+index -->
+busqueda de proyectos -->
+entorno de proyecto -->
+
+fabiola --> 4.3
+andres --> 5
+
+modulo de logueo
++-------------------------------+
+login --> frm --> code --> seguridad -->
+registro1 -->frm --> code --> seguridad --> %validar password2 -->
+registro2 --> frm --> code --> seguridad -->
+registro de proyecto --> frm --> code--> seguridad--> %control de campos -->
+recuperar contraseña --> 
+
+modulo estudiante
++------------------------+
+perfil -->
+registro de proyecto --> frm -->
+carga de proyecto -->  frm -->
+carga de anexos --> 
+lista de proyectos --> 
+lista de archivos --> 
+calendario de actividades --> frm --> ok 
+chat de asesorias --> frm --> ok 
+calificaciones -->
+documentacion --> 
+
+
+proyecto --> id (i++), code -> (id+5+2017+203+I)
+205 sistemas
+203 industrial
+
+modulo docente
++--------------------------------------+
+Citas de asesorias --> 
+Sesiones de chats -->
+Lista de proyectos -->
+Lista de estudiantes -->
+Gestion de calificaciones -->
+
+
+modulo administrador
++-----------------------------------+
+
+
+
+Usuarios
++------------------------------+
+test1->text1--> ing sis-->
+
+ALTER TABLE `bdsisgea`.`proyecto_estudiante` 
+ADD INDEX `proyecto_estudiante_idx` (`proyecto` ASC),
+ADD INDEX `estudiante_proyecto_idx` (`estudiante` ASC);
+ALTER TABLE `bdsisgea`.`proyecto_estudiante` 
+ADD CONSTRAINT `proyecto_estudiante`
+  FOREIGN KEY (`proyecto`)
+  REFERENCES `bdsisgea`.`tblproyecto` (`id_proyecto`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION,
+ADD CONSTRAINT `estudiante_proyecto`
+  FOREIGN KEY (`estudiante`)
+  REFERENCES `bdsisgea`.`tblusuarios` (`id_usuario`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
++----------------------+---+----+
+| tablas               |PK |A_I |
++----------------------+---+----+
+|login                 |x  |x   |
++----------------------+---+----+
+|perfil                |x  |x   |
++----------------------+---+----+
+|login_perfil          |x  |x   |
++----------------------+---+----+
+|menu                  |x  |    |
++----------------------+---+----+
+|menu_perfil           |?  |    |
++----------------------+---+----+
+|Usuarios              |x  |x   |
++----------------------+---+----+
+|login_usuario         |?  |    |
++----------------------+---+----+
+|proyecto              |x  |x   |
++----------------------+---+----+
+|estudiante_proyecto   |?  |x   |
++----------------------+---+----+
+|asesoriavirtual       |x  |    |
++----------------------+---+----+
+|eventos               |x  |    |
++----------------------+---+----+
+|
+
+
+
+
+
+
+
+
+
+funcion cargar_grupos
+  resultado = consulta(basededatos)
+  si resultado = "" entonces
+    escriba "la consulta no arroja resultados"
+  sino
+    mientras(fila = resultado) hacer
+      escriba "mostrar grupos asignados"
+    fin mientras
+  fin si
+fin funcion
+
+
+
+
+
+
+
+
+
+
+
+
+
+

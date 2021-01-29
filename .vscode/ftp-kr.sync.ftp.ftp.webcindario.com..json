@@ -1,0 +1,25 @@
+{
+    "type": "d",
+    "name": "",
+    "size": 4096,
+    "files": [
+        {
+            "type": "d",
+            "name": "proyectos",
+            "size": 4096,
+            "files": []
+        },
+        {
+            "type": "d",
+            "name": "tmp",
+            "size": 4096,
+            "files": []
+        },
+        {
+            "type": "d",
+            "name": "web",
+            "size": 4096,
+            "files": []
+        }
+    ]
+}

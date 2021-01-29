@@ -1,0 +1,54 @@
+<div class="row">        
+  <div class="col-md-3">  </div>
+  <div class="col-md-5">
+    <!-- ************** INICIO DIV postgrados(especializaciones) **  -->
+    <div class="box-body" id="divSpecial" style="display: none; border: outset red; background-color: lightblue; text-align: center;">          
+          <div class="modal-header">
+            <h3 class="modal-title" id="titModal">Profesiones del asesor </h3>
+          </div> 
+          <div class="divAbajo">                  
+            <div class="row">
+              <div class="col-md-1">&nbsp;</div>
+              <div class="col-md-5" id="cbospec1" datasearch="' . $idbusca . '" datachange="0" data-tipo="' . $nnn . '">
+              </div>
+              <div class="col-md-4">
+                <a class="btn btn-success btn-block btn-flat" title="Adicionar un Asesor" type="button" id="addCarrera2 datacode="new" href="#2><i class="fa fa-plus"></i> Agregar Carrera</a>
+              </div>
+            </div>
+            <br>
+            <table class="tbl_venta">
+              <thead>
+                <tr>
+                  <th width="100px">Carrera</th>
+                  <th> Acción</th>
+                </tr>
+              </thead>
+              <tbody id="detalle_venta">
+                <!-- Contenido detalle llega desde ajax-->
+              </tbody>
+              <tfoot id="detalle_totales">
+                <!-- Contenido totales llega desde ajax-->
+              </tfoot>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <div class="row">
+              <div class="col-md-6">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  <span class="glyphicon glyphicon-remove"></span>
+                  <span class="hidden-xs">Cerrar</span>
+                </button>
+              </div>
+              <div class="col-md-6">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  <span class="glyphicon glyphicon-remove"></span>
+                  <span class="hidden-xs">Cerrar</span>
+                </button>
+              </div>
+            </div>
+            <!--      </form>  -->
+          </div>
+    </div>
+    <!-- ************** FIN DIV postgrados(especializaciones) ****   -->
+  </div>        
+<div>
